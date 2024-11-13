@@ -1,0 +1,100 @@
+Ring#Anel de Fúrion#Faz com que o jogador ganhe 4 de ataque por 8 horas durante a batalha, mas a cada ação ofensiva há 15% (3/20) de chance de perder 50 de vida.
+Ring#Anel de Déxteron#Aumenta a destreza do jogador em 4 por 2 horas durante a batalha.
+Ring#Anel de Pensális#Aumenta a inteligência do jogador em 7 e a precisão em 3 por 3 horas durante a batalha.
+Ring#Anel amaldiçoado de Formatus#Ao ser usado, não é possível mais retirá-lo até sair da próxima batalha. Faz perder 20 de vida por turno. Durante a batalha aumenta a mira e o espírito do jogador em 10. Após a batalha ele se autodestrói e regenera 50 de vida para o jogador.
+Ring#Anel abençoado de Colórius#Concede resistência a maldições e envenenamentos por 4 horas durante a batalha, além de aumentar o espírito em 8.
+Ring#Anel de Múmius#Ganha habilidade de falar com os mortos.
+Ring#Anel de Bettolizzi#Aumenta a força em 5, mas reduz a inteligência em 2.
+Ring#Anel amaldiçoado de Regex#Transforma a fala do jogador em uma linguagem confusa e criptografada durante 2 horas, tornando a comunicação verbal difícil.
+Ring#Anel abençoado de Memórius#Permite ao jogador copiar o último ataque de um aliado ou inimigo e usá-lo em quem quiser, dando o mesmo dano que o ataque original, mas consome 300 de mana para isso e pode ser usado 1 vez a cada 3 rodadas.
+Bracelet#Pulseira de Peixes#Concede a habilidade de não precisar de oxigênio, podendo mergulhar por longos períodos e até mesmo habitar o vácuo.
+Bracelet#Pulseira de Áries#Concede um aumento considerável de habilidade de esquiva de ataques.
+Bracelet#Pulseira de Touro#Concede um escudo indestrutível que dura 2 rodadas durante uma batalha.
+Bracelet#Pulseira de Gêmeos#Concede a habilidade de ler a mente de alguém. 1 uso por hora.
+Bracelet#Pulseira de Câncer#Concede a habilidade de curar dano contínuo (DoT) de um companheiro. 1 uso por batalha.
+Bracelet#Pulseira de Leão#Concede um aumento de 5 em todos os atributos de profissão durante a batalha.
+Bracelet#Pulseira de Virgem#Concede a habilidade de cura leve (incluindo a si mesmo), o que inclui arranhões ou cortes desde que o alvo ainda tenha pelo menos 400 de vida.
+Bracelet#Pulseira de Libra#Concede alto poder de persuasão durante negociações ou discussões.
+Bracelet#Pulseira de Escorpião#Concede a habilidade de aplicar dano contínuo em área. Possui fogo amigo.
+Bracelet#Pulseira de Ofiúco#Concede a habilidade de cura pesada (excluindo a si mesmo), o que inclui até membros inteiros desde que o alvo ainda tenha pelo menos 100 de vida.
+Bracelet#Pulseira de Sagitário#Permite invocar uma criatura para ajudar na batalha.
+Bracelet#Pulseira de Capricórnio#Permite criar até 2 clones de si mesmo durante a batalha.
+Bracelet#Pulseira de Aquário#Concede a habilidade de telecinese com água (excetuando-se aquela que faz parte de organismos vivos).
+Collar#Colar de ouro#Aumenta a vida máxima em 120.
+Collar#Colar de diamante#Aumenta a vida máxima em 120 e a mana máxima em 100.
+Collar#Colar de magnetita#Aumenta a mana máxima em 100.
+Collar#Colar de ferro#Aumenta o ataque em 15.
+Collar#Colar de cobre#Aumenta a defesa em 15.
+Collar#Colar de prata#Aumenta a velocidade em 10.
+Collar#Colar de bismuto#Aumenta a vida máxima em 200, mas reduz a velocidade em 12.
+Collar#Colar de lítio#Aumenta a mana máxima em 50, mas reduz a defesa em 10.
+Collar#Colar de latão#Aumenta o ataque em 20, mas ao ser curado, o efeito é anulado e o colar é destruído.
+Collar#Colar de bronze#Aumenta a defesa em 30, mas reduz a vida máxima em 110.
+Collar#Colar de esmeralda#Aumenta a mira em 5.
+Collar#Colar de rubi#Aumenta a destreza em 5.
+Collar#Colar de safira#Aumenta a inteligência em 5.
+Collar#Colar de ametista#Aumenta a força em 5.
+Collar#Colar de obsidiana#Aumenta o espírito em 5.
+Collar#Colar de platina#Aumenta a precisão em 5.
+Collar#Colar de fosfofilita#Aumenta a vida máxima e mana máxima em 100; ataque e defesa em 10; velocidade em 5; mira, destreza, inteligência, força, espírito e precisão em 1.
+Amulet#Amuleto do louco#Ao ser quebrado, inverte o efeito do dado.
+Amulet#Amuleto do sortudo#Ao ser quebrado, aumenta 2 pontos no dado.
+Amulet#Amuleto do degenerado#Ao ser quebrado, se o valor no dado for par, o jogador evita ser alvo de ataques inimigos na rodada atual; se for ímpar, o jogador troca de sexo.
+Amulet#Amuleto do perdido#Ao ser quebrado, se o valor no dado for maior que a metade, o jogador ganha uma ação extra; se for menor, ele fica 1 rodada sem jogar.
+Amulet#Amuleto do ladrão#Ao ser quebrado, pode roubar a vez de um jogador na rodada, e esse jogador fica sem jogar nela.
+Amulet#Amuleto do presidente#Ao ser quebrado, ganha um segundo lance no dado caso deseje.
+Amulet#Amuleto do rei#Ao ser quebrado, ganha uma ação extra na rodada.
+Amulet#Amuleto do covarde#Ao ser quebrado, diminui 2 pontos no dado.
+Amulet#Amuleto do drogado#Ao ser quebrado, joga-se um dado d4 e, se o resultado dele for par, será somado ao resultado do dado principal; se for ímpar, será subtraído.
+Amulet#Amuleto do anjo#Ao ser quebrado, fica imune a efeitos negativos do dado, fazendo com que a ação do jogador seja perdida na rodada se for o caso.
+Amulet#Amuleto do diabo#Ao ser quebrado, faz um inimigo ficar imune a efeitos positivos, fazendo com que sua ação seja perdida na rodada se for o caso.
+Amulet#Amuleto do pirata#Ao ser quebrado, se o valor no dado for menor que a metade, o jogador ganha um tapa-olho permanente e fica imune a ataques de inimigos mortos-vivos durante as próximas 2 rodadas.
+Amulet#Amuleto do estudante#Ao ser quebrado, um dado d6 é lançado e seu resultado será somado permanentemente à inteligência do jogador.
+Amulet#Amuleto do hipócrita#Ao ser quebrado, o dado principal deverá ser lançado duas vezes. O resultado final é o maior número menos o menor. Caso dê 0, considera-se que o resultado foi 1.
+Item#Maçã#Regenera 20 de vida.
+Item#Poção de peso leve#Faz o peso do jogador diminuir por 1 hora, permitindo que ele pule mais alto e caia lentamente.
+Item#Pedra de mana frágil#Ao ser quebrada, tem 60% de chance de regenerar 100 de mana para o jogador e 10% de chance de roubar 50 de mana.
+Item#Pedra de mana firme#Ao ser quebrada, tem 80% de chance de regenerar 150 de mana para o jogador e 20% de chance de roubar 100 de mana.
+Item#Pudim#Regenera 100 de vida e aumenta a destreza em 6 por 2 horas.
+Item#Soqueira#O próximo ataque, se ele depender da força do jogador, terá seu dano aumentado em 50%. Após isso o item será quebrado, mas pode ser consertado em um artesão.
+Item#Fantasia de coelhinha#Permite saltar mais alto, reduz o dano de queda pela metade e cava buracos com mais facilidade.
+Item#Pena encantada#Permite enviar uma carta em segundos para alguém distante.
+Item#Pão recheado#Regenera 50 de mana.
+Item#Frango assado#Regenera 40 de vida e 30 de mana.
+Item#Carrapato rei#Um inseto que pode ser lançado em campo para atrair mortos-vivos.
+Item#Luva de seda#Dá resistência ao frio extremo e permite manusear objetos frágeis com maior facilidade.
+Item#Xarope#Cura envenenamento. Será consumido após 1 uso.
+Item#Rede#Permite dormir confortavelmente no relento.
+Item#Fogão portátil#Cozinha em qualquer lugar.
+Item#Ovo de jacaré#Evita mortos-vivos.
+Item#Varinha de vento#Lança uma forte rajada de vento em alguém, atirando o indivíduo 10 metros para longe. Consome após 2 usos.
+Item#Poção de invisibilidade#Concede invisibilidade (incluindo roupas, armas e outros itens que jogador esteja carregando) por 4 horas.
+Item#Bota de couro#Pés quentinhos.
+Item#Toalha#Cura sangramento. Estará inutilizável após 1 uso, mas pode ser lavada.
+Item#Caixa de presente#Ao ser aberta, concete um amuleto aleatório.
+Item#Fantasia de jegue#Permite falar com animais.
+Item#Caveira#Se combinado com um amuleto, invoca o dono do amuleto para ajudar na batalha. A entidade existe apenas durante a batalha e pode ser derrotada com um único golpe. Se ela permanecer viva até o fim, devolve o amuleto do jogador.
+Item#Bolas de Colombo#Item raro de colecionador; pode ser vendido a um alto preço.
+Item#Garrafa d'água santa#Regenera 200 de vida.
+Item#Tiara de neko#Aumenta a destreza em 10 e dá ao jogador a habilidade de parkour.
+Item#Canhão de bolso#Um canhão em miniatura que, ao ser usado, aumenta para o tamanho de um verdadeiro. Possui 3 balas.
+Item#Fantasia de marinheiro#Ao comer espinafre, aumenta a força em 15 por 1 hora.
+Item#Espinafre#Alimento saudável.
+Item#Chapéu de palha#Aumenta a mira em 10 por 2 horas.
+Item#Carta de invocação#Ao ser usada, ganha um anel, uma pulseira ou um colar aleatório.
+Item#Bússola#Mostra onde está o baú mais próximo. Máximo de 3 usos com intervalo de 2 rodadas entre cada um.
+Item#Lençol vermelho#Ao passar uma noite dormindo com ele, aumenta o espírito em 7 permanentemente. O efeito acontece uma única vez.
+Item#Fantasia de árvore#Garante boa camuflagem em áreas verdejantes.
+Item#Poção de Ânibi#Permite ressuscitar alguém morto, mas consome 40% da vida atual do jogador.
+Item#Livro mágico#Após a leitura, ganha a habilidade passiva de lançar raios nos inimigos sempre depois de um ataque; causam 50 de dano. Leva 7 turnos para ler tudo. Durante a leitura, não é possível realizar ações de combate.
+Item#Escudo imaginário#Reduz o dano recebido pelo jogador em 40. Quebra após 3 golpes, mas pode ser consertado num ferreiro das artes místicas.
+Item#Fantasia de pirata#Ao ativar o efeito do amuleto do pirata, ganha a habilidade de invocar um morto-vivo para ajudar na batalha às custas de 270 de mana. A vida da entidade invocada é de 300. Ela some após a batalha.
+Item#Fantasia de romano#Aumenta a defesa em 30, a mira em 9 e a precisão em 7.
+Item#Bigode falso#Aumenta seu charme.
+Item#Bigode falso grande#Aumenta sua estranheza.
+Item#Sunga apertada#Se usada, todas as outras peças de roupa do jogador ficam invisíveis, mas aumenta o espírito em 14.
+Item#Óculos escuros#Aumenta a inteligência em 12.
+Item#Calibre 12#Vem com 10 munições.
+Item#Martelo gigante#Ao bater com ele no chão, causa terremoto num raio de 10 metros. O terremoto causa max(0, 10-x) de dano a um inimigo ou aliado a x metros de distância do jogador.
+Item#Bar portátil#Invoca um bar onde quiser para relaxar.
+Item#Pílula de byund#Ao ser ingerida, caso o jogador morra, ele renasce novo em folha.

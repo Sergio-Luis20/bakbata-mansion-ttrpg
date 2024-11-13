@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: Bakbata's Mansion
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    database-platform: ${DATABASE_PLATFORM}
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+  servlet:
+    multipart:
+      max-request-size: 8MB
+  devtools:
+    restart:
+      quiet-period: 2000
+      poll-interval: 3000
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+jwt:
+  private-key: classpath:private.key
+  public-key: classpath:public.key
+admin:
+  username: ${ADMIN_USERNAME}
+  password: ${ADMIN_PASSWORD}

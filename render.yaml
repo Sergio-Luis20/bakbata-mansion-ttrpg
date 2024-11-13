@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: bakbata-mansion-ttrpg
+    repo: https://github.com/Sergio-Luis20/bakbata-mansion-ttrpg
+    branch: main
+    dockerfilePath: ./Dockerfile
+    plan: free
+    runtime: docker
+    autoDeploy: true
