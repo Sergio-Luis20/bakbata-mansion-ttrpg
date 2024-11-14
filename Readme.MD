@@ -487,3 +487,47 @@ Content-Type: application/json
   "message": "string"
 }
 ```
+
+### (RA) /ability/{race}
+#### GET
+Retorna o conjunto de habilidades da raça especificada.
+
+**Parâmetro da URL**:
+- **race**: A raça cujas habilidades são desejadas. Deve ser uma das retornadas por **GET /sheet/all-options/Race**.
+
+**Respostas**:
+
+**200 OK**: Se as habilidades tiverem sido encontradas com êxito.
+- **Headers**:  
+  Content-Type: application/json
+- **Body**:
+```json lines
+{
+  "first": {
+    "id": long,
+    "name": "string",
+    "description": "string"
+  },
+  "second": {
+    "id": long,
+    "name": "string",
+    "description": "string"
+  },
+  "third": {
+    "id": long,
+    "name": "string",
+    "description": "string"
+  }
+}
+```
+
+**400 Bad Request**: Se o parâmetro ***race*** não for nenhum dos valores válidos de raças retornados por **GET /sheet/all-options/Race**.
+- **Headers**:  
+  Content-Type: application/json
+- **Body**:
+```json lines
+{
+  "statusCode": int,
+  "message": "string"
+}
+```
