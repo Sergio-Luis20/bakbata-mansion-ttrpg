@@ -4,8 +4,14 @@
 
 ###### (Fiz a documentação no Readme mesmo porque não estou com tempo nem saco pra montar Swagger)
 
+### (P) /
+#### GET
+Eco. Retorna apenas **200 OK**.
+
 ### (P) /auth/register
 #### POST
+Registra uma nova conta. Retorna o token JWT.
+
 **Corpo da requisição**:
 ```json lines
 {
@@ -54,6 +60,8 @@ Content-Type: application/json
 
 ### (P) /auth/login
 #### POST
+Faz login. Retorna o token JWT.
+
 **Corpo da requisição**:
 ```json lines
 {
@@ -84,6 +92,8 @@ Content-Type: application/json
 
 ### (RA) /sheet/all-options/{type}
 #### GET
+Obtém uma lista de todas as opções para um determinado enum.
+
 **Parâmetros da URL**:  
 - **type**: O tipo de opções de enum, que podem ser Profession, Race ou Weapon.  
 
@@ -241,6 +251,7 @@ Content-Type: application/json
 ### (RA) /sheet/{id}
 #### GET
 Retorna a ficha com o id provido.  
+
 **Parâmetros da URL**:
 - **id**: O id da ficha.
 
