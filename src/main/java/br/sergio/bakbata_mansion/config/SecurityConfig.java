@@ -59,7 +59,7 @@ public class SecurityConfig {
                     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
                     CorsConfiguration config = new CorsConfiguration();
-                    config.setAllowCredentials(false);
+                    config.setAllowCredentials(true);
                     config.setMaxAge(Duration.ofHours(8));
                     config.addAllowedHeader("*");
                     config.addAllowedMethod("*");
