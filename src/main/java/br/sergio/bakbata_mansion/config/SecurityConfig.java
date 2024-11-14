@@ -17,7 +17,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
@@ -25,9 +24,12 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
+import java.time.Duration;
 
 @Configuration
 @EnableWebSecurity
@@ -52,7 +54,21 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
-                .cors(AbstractHttpConfigurer::disable)
+                .cors(cors -> {
+                    // Allow all origins
+                    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+                    CorsConfiguration config = new CorsConfiguration();
+                    config.setAllowCredentials(false);
+                    config.setMaxAge(Duration.ofHours(8));
+                    config.addAllowedHeader("*");
+                    config.addAllowedMethod("*");
+                    config.addExposedHeader("*");
+                    config.addAllowedOrigin("*");
+
+                    source.registerCorsConfiguration("/**", config);
+                    cors.configurationSource(source);
+                })
                 .build();
     }
 
