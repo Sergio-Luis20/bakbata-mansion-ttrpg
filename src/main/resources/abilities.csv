@@ -1,0 +1,33 @@
+HUMAN#Engenhoca#Consegue trabalhar materiais com mais eficiência, deixando aquilo que levaria dias para ficar pronto com muito esforço já perfeito em poucos segundos. Custa 110 de mana.
+HUMAN#Resistência#Ganha resistência contra cansaço durante a batalha, o que reduz o custo de mana em 50%.
+HUMAN#Buffing#Dobra todos os atributos de profissão por 3 rodadas. Custa 380 de mana.
+WITCH#Dilatação temporal#Pode desacelerar o tempo em um raio de 5 metros por 10 segundos. Indivíduos (amigos ou inimigos) dentro do campo do efeito não serão paralisados, apenas retardados pela metade em relação ao tempo do invocador. Custa 120 de mana.
+WITCH#Aura diabólica#Exibe uma aura em volta de si mesma que faz qualquer inimigo sentir um medo nunca antes sentido. São loucos os que não recuam após sentir tal sensação. Custa 190 de mana.
+WITCH#Vassourinha#Invoca uma vassoura voadora para ir onde quiser; ela dura 1 hora. Custa 90 de mana.
+MAINTARI#Paralisação temporal#Pode parar o tempo instantânea e universalmente por 3 segundos. Qualquer coisa, com exceção do invocador, paralisar-se-á imediatamente. Custa 300 de mana.
+MAINTARI#Cura magnânima#Consegue curar qualquer ferimento ou doença ou ressuscitar um indivíduo (com exceção do próprio usuário). É necessário ter pelo menos 60% da mana máxima e ao ser usado, consumirá ela inteira. É possível usar 1 vez por mês.
+MAINTARI#Vida extra#Ao morrer, ressuscita com vida e mana máxima. Pode usar 1 vez em toda sua vida.
+URILO#Possessão#Pode possuir um indivíduo corpóreo, vivo ou morto, amigo ou inimigo, por 1 hora. Se o corpo possuído morrer (ou perder a capacidade de consciência, no caso de um corpo morto), o possuidor não morre, apenas é expulso dele. Custa 270 de mana.
+URILO#Fusão#Ao ser possuído ou possuir outro urilo, ambos se fundem por 1 hora, os atributos do urilo resultante são a soma dos atributos dos individuais. Custa 430 de mana de cada indivíduo. Se o possuído recusar a possessão, apenas a mana do possuidor é descontada.
+URILO#Espectro#Consegue desmaterializar seu corpo, sendo capaz de voar e atravessar objetos. Não é visto por criaturas vivas. Dura 1 hora e custa 240 de mana.
+BYUND#Telecinese (Vermelho)#Pode mover no máximo 50 kg num raio limite de 20 metros. Pode mover apenas objetos inanimados. Custo de 10 de mana para cada quilograma movido.
+BYUND#Manipulação de energia (Verde)#Pode lançar chamadas (energia térmica), raios (energia elétrica) ou acelerar objetos (energia cinética) ao cuto de 100 de mana por ação.
+BYUND#Bioespiritualismo necromântico (Azul)#Pode invocar ou animar qualquer tipo de criatura não-viva (espíritos ou mortos-vivos) para ajudar na batalha ao custo de 180 de mana por criatura.
+PILO#Fortificação#Tem seu ataque e defesa dobrados e velocidade aumentada em 50%. Totalmente imune a ataques físicos. Esses efeitos duram por 5 rodadas. Custa 320 de mana.
+PILO#Tecnointegração#Consegue descobrir como manipular instantaneamente qualquer objeto mecânico, analógico ou digital. Também pode se integrar a ele se o objeto tiver entradas de conexão. Custa 100 de mana.
+PILO#Autodestruição#Libera uma forte explosão, equivalente a 1 quilotonelada de dinamite, mas fica totalmente incapacitado no processo e sua vida e mana são reduzidas ambas a 1. Só consegue ser consertado por outro pilo usando tecnointegração.
+TRION#Granada materialística#Consegue tornar qualquer massa de material em uma bomba-relógio que explode dentro de 15 segundos. Custa 50 de mana por grama de material; a explosão gerada atinge um raio de 4 vezes o piso da massa em gramas; o raio é dado em metros.
+TRION#Pistola penetrativa#Invoca uma pistola cujas balas consegue perfurar até 5 objetos sólidos sem perder momento linear. Máximo de 5 balas por invocação. Custa 200 de mana.
+TRION#Barricada#Consegue erguer uma barricada imediata para se proteger de ataques. Trata-se apenas de um monte de terra erguida, subindo até no máximo 2 metros e se estendendo por no máximo 3. Não é possível invocar se o chão não for de terra. Custa 80 de mana.
+NOIN#Teletransporte#Consegue se teletransportar para qualquer lugar num raio de 100 metros. Pode ser usado 1 vez a cada 2 rodadas e custa 150 de mana.
+NOIN#Imunidade espiritual#Não pode ser possuída por urilos e fica imune a ataques de indivíduos não-corpóreos por 3 horas. Custa 200 de mana.
+NOIN#Desarmado#Aumenta o dano dos golpes sem arma para o mesmo dano que se tivesse usando sua arma. Dura por 1 hora e custa 140 de mana.
+FORI#Modo semiespectro#Durante 2 horas, consegue usar ataques físicos em criaturas não corpóreas, além de conseguir enxergar as que antes não enxergava. Custa 260 de mana.
+FORI#Probabilidade determinística#Fica imune a efeitos negativos do dado por 3 rodadas. Custa 280 de mana.
+FORI#Sanguessuga#Consegue roubar de 50 a 100 de vida do inimigo. Custa 170 de mana.
+VABA#Cópia barata#Consegue copiar qualquer habilidade de um aliado para usar. Custa 120 de mana + a mana da habilidade copiada. Se a habilidade tiver condições, também se aplicam.
+VABA#Materialização#Gera um objeto de qualquer material. Quanto maior for a massa e a complexidade do objeto, maior o custo de mana. Há 5 níveis de complexidade para o objeto e ela é dita pelo mestre. O custo de mana é 70 * complexidade * massa (kg).
+VABA#Imunidade absoluta#Imune a qualquer tipo de ataque de qualquer criatura por 3 rodadas. Custa 430 de mana.
+JINTE#Camuflagem#Pode passar despercebido por uma horda de inimigos por 2 rodadas. Custa 80 de mana.
+JINTE#Confusão#Consegue confundir inimigos, que por sua vez dificilmente acertam golpes. O efeito dura 4 rodadas. Custa 160 de mana.
+JINTE#Prisão#Pode prender um inimigo numa corda especial, deixando-o imóvel por 4 rodadas. Para inimigos corpóreos, a chance de prisão é de 100%; para não-corpóreos, 40%. Custa 210 de mana.
