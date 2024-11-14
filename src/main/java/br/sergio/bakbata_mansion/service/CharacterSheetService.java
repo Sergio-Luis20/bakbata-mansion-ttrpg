@@ -1,11 +1,7 @@
 package br.sergio.bakbata_mansion.service;
 
-import br.sergio.bakbata_mansion.exception.ItemNotFoundException;
-import br.sergio.bakbata_mansion.exception.NotFoundException;
-import br.sergio.bakbata_mansion.exception.OrphanSheetException;
+import br.sergio.bakbata_mansion.exception.*;
 import br.sergio.bakbata_mansion.repository.CharacterSheetRepository;
-import br.sergio.bakbata_mansion.repository.ItemRepository;
-import br.sergio.bakbata_mansion.repository.specials.ItemKindRepository;
 import br.sergio.bakbata_mansion.sheet.*;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -23,22 +19,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CharacterSheetService {
 
-
-
-
-    /*
-     * Adicionar nível na ficha. Vai de 0 a 30.
-     * Criar habilidades. Apenas 3 habilidades por raça.
-     * O jogador ganha a primeira habilidade no nível 10, a segunda no nível 20
-     * e a terceira no nível 30.
-     * Lembrar de adicionar isso ao sistema de atualizar a ficha.
-     */
-
-
-
-
     private CharacterSheetRepository repository;
-    private ItemRepository itemRepository;
     private ItemService itemService;
 
     public Optional<CharacterSheet> getSheet(UUID id) {
@@ -78,24 +59,36 @@ public class CharacterSheetService {
 
         UpdateInventoryDTO inv = sheetDTO.inventory();
         if (inv != null) {
+            Map<UUID, Integer> itemsToUpdate = inv.items().stream()
+                    .filter(item -> item != null && !item.isNewItem())
+                    .collect(Collectors.toMap(UpdateItemDTO::idAsUUID, UpdateItemDTO::amount));
+
+            Inventory inventory = sheet.getInventory();
+            List<Item> items = inventory.getItems();
+            for (Item item : items) {
+                Integer amount = itemsToUpdate.get(item.getId());
+                if (amount == null) {
+                    continue;
+                }
+                if (amount < 0) {
+                    throw new NegativeIntegerException("Item amount can't be negative");
+                }
+                item.setAmount(amount);
+            }
+            List<Item> itemsToDelete = items.stream().filter(Item::isDead).toList();
+            items.removeAll(itemsToDelete);
+
             Map<Long, UpdateItemDTO> newItems = inv.items().stream().filter(UpdateItemDTO::isNewItem)
                     .collect(Collectors.toMap(UpdateItemDTO::idAsLong, item -> item));
             List<ItemKind> itemsToAdd = itemService.getItemKindRepository().findAllById(newItems.keySet());
-            itemRepository.saveAll(itemsToAdd.stream().map(item -> {
-                Item newItem = new Item(item.getName(), newItems.get(item.getId()).amount(),
-                        item.getDescription());
-                newItem.setInventory(sheet.getInventory());
-                return newItem;
-            }).toList());
-            Map<UUID, Integer> itemsToUpdate = inv.items().stream()
-                    .filter(item -> !item.isNewItem())
-                    .collect(Collectors.toMap(UpdateItemDTO::idAsUUID, UpdateItemDTO::amount));
-            List<Item> items = itemRepository.findAllById(itemsToUpdate.keySet());
-            items.forEach(item -> item.setAmount(itemsToUpdate.get(item.getId())));
-            List<Item> itemsToDelete = items.stream().filter(Item::isDead).toList();
-            items.removeAll(itemsToDelete);
-            itemRepository.saveAll(items);
-            itemRepository.deleteAll(itemsToDelete);
+            List<Item> createdItems = itemsToAdd.stream().map(item -> new Item(item.getName(),
+                    newItems.get(item.getId()).amount(), item.getDescription())).toList();
+
+            if (createdItems.size() + inventory.size() > inventory.capacity()) {
+                throw new FullInventoryException("Full inventory");
+            }
+
+            createdItems.forEach(inventory::add);
         }
 
         updateSpecialItem(sheet, "Ring", sheetDTO.ring());
@@ -103,12 +96,19 @@ public class CharacterSheetService {
         updateSpecialItem(sheet, "Collar", sheetDTO.collar());
         updateSpecialItem(sheet, "Amulet", sheetDTO.amulet());
 
-        AbilitySetDTO abilities = sheetDTO.abilities();
+        UpdateAbilitiesDTO abilities = sheetDTO.abilities();
         if (abilities != null) {
             AbilitySet abilitySet = sheet.getAbilitySet();
-            abilitySet.setFirst(abilities.firstAsAbility());
-            abilitySet.setSecond(abilities.secondAsAbility());
-            abilitySet.setThird(abilities.thirdAsAbility());
+            Race race = sheet.getRace();
+            if (abilities.first() != null) {
+                abilitySet.setFirst(abilities.first() ? race.getFirstAbility() : null);
+            }
+            if (abilities.second() != null) {
+                abilitySet.setSecond(abilities.second() ? race.getSecondAbility() : null);
+            }
+            if (abilities.third() != null) {
+                abilitySet.setThird(abilities.third() ? race.getThirdAbility() : null);
+            }
         }
 
         return repository.save(sheet);
@@ -126,11 +126,11 @@ public class CharacterSheetService {
 
     private <T> void setSpecialItem(JpaRepository<T, Long> repository, String type,
                                     UpdateSpecialItemDTO dto, Consumer<T> consumer) {
-        if (dto == null) {
+        Long id;
+        if (dto == null || (id = dto.id()) == null) {
             consumer.accept(null);
             return;
         }
-        long id = dto.id();;
         repository.findById(id)
                 .ifPresentOrElse(consumer, () -> {
                     throw new ItemNotFoundException(type + " not found for id: " + id);

@@ -9,6 +9,6 @@ public record UpdateSheetDTO(
         UpdateSpecialItemDTO bracelet,
         UpdateSpecialItemDTO collar,
         UpdateSpecialItemDTO amulet,
-        AbilitySetDTO abilities
+        UpdateAbilitiesDTO abilities
 ) {
 }

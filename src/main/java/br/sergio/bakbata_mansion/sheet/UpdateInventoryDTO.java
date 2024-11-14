@@ -1,13 +1,19 @@
 package br.sergio.bakbata_mansion.sheet;
 
+import br.sergio.bakbata_mansion.exception.NullJsonPropertyException;
+
 import java.util.List;
-import java.util.Objects;
 
 public record UpdateInventoryDTO(List<UpdateItemDTO> items) {
 
     public UpdateInventoryDTO {
-        for (UpdateItemDTO item : Objects.requireNonNull(items, "items")) {
-            Objects.requireNonNull(item, "item");
+        if (items == null) {
+            throw new NullJsonPropertyException("Items cannot be null");
+        }
+        for (UpdateItemDTO item : items) {
+            if (item == null) {
+                throw new NullJsonPropertyException("Inventory item cannot be null");
+            }
         }
     }
 

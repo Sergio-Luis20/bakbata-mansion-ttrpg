@@ -1,5 +1,7 @@
 package br.sergio.bakbata_mansion.sheet;
 
+import br.sergio.bakbata_mansion.exception.NegativeIntegerException;
+import br.sergio.bakbata_mansion.exception.NullJsonPropertyException;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -8,8 +10,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -36,7 +36,13 @@ public abstract sealed class SpecialItem implements GameElement<Long> permits Ri
     }
 
     public void setId(Long id) {
-        this.id = Objects.requireNonNull(id, "id");
+        if (id == null) {
+            throw new NullJsonPropertyException("SpecialItem id cannot be null");
+        }
+        if (id <= 0) {
+            throw new NegativeIntegerException("SpecialItem id must be positive");
+        }
+        this.id = id;
     }
 
 }

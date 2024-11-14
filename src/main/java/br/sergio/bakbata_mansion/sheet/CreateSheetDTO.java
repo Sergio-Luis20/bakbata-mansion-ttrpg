@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Pattern;
 
 import java.util.Objects;
 
-public record CreateSheetDTO(@NotNull @Pattern(regexp = "\\A[a-zA-ZáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãõñÃÕÑçÇàèìòùÀÈÌÒÙ _'-]{3,36}\\z") String name, @NotNull Profession profession) {
+public record CreateSheetDTO(@NotNull @Pattern(regexp = "\\A[a-zA-ZáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãõñÃÕÑçÇàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ _'-]{3,36}\\z") String name, @NotNull Profession profession) {
 
     public CharacterSheet toSheet(GameUser user) {
         CharacterSheet sheet = new CharacterSheet(name, profession);
