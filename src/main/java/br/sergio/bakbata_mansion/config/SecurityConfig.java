@@ -24,17 +24,16 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.time.Duration;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-public class SecurityConfig {
+public class SecurityConfig implements WebMvcConfigurer {
 
     @Value("${jwt.private-key}")
     private RSAPrivateKey privateKey;
@@ -54,21 +53,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
-                .cors(cors -> {
-                    // Allow all origins
-                    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-
-                    CorsConfiguration config = new CorsConfiguration();
-                    config.setAllowCredentials(true);
-                    config.setMaxAge(Duration.ofHours(8));
-                    config.addAllowedHeader("*");
-                    config.addAllowedMethod("*");
-                    config.addExposedHeader("*");
-                    config.addAllowedOriginPattern("*");
-
-                    source.registerCorsConfiguration("/**", config);
-                    cors.configurationSource(source);
-                })
+//                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .build();
     }
 
@@ -92,6 +77,33 @@ public class SecurityConfig {
     @Bean
     public JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withPublicKey(publicKey).build();
+    }
+
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        // Allow all origins
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//
+//        CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(false);
+//        config.setMaxAge(Duration.ofHours(8));
+//        config.addAllowedHeader("*");
+//        config.addAllowedMethod("*");
+//        config.addExposedHeader("*");
+//        config.addAllowedOriginPattern("*");
+//
+//        source.registerCorsConfiguration("/**", config);
+//        return source;
+//    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowCredentials(false)
+                .allowedHeaders("*")
+                .allowedOriginPatterns("*")
+                .allowedMethods("*")
+                .exposedHeaders("*");
     }
 
 }
