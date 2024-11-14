@@ -6,7 +6,6 @@ import br.sergio.bakbata_mansion.service.UserService;
 import br.sergio.bakbata_mansion.sheet.*;
 import br.sergio.bakbata_mansion.user.GameUser;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

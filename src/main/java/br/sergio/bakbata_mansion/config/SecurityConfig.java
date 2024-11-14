@@ -64,7 +64,7 @@ public class SecurityConfig {
                     config.addAllowedHeader("*");
                     config.addAllowedMethod("*");
                     config.addExposedHeader("*");
-                    config.addAllowedOrigin("*");
+                    config.addAllowedOriginPattern("*");
 
                     source.registerCorsConfiguration("/**", config);
                     cors.configurationSource(source);

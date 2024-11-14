@@ -10,7 +10,7 @@ public enum Race implements AttributeContributor {
 
     HUMAN(500, 250),
     WITCH(640, 920),
-    MAINTARI(530, 420),
+    MAINTARI(530, 520),
     URILO(880, 490),
     BYUND(780,820),
     PILO(1000, 320),
