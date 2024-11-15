@@ -67,8 +67,10 @@ public class CharacterSheetService {
         AttrSet set = sheetDTO.attributes();
         if (set != null) {
             sheet.setAttributeSet(set);
-        } else if (modified) {
-            sheet.calculateAttributes();
+        } else {
+            if (modified) {
+                sheet.calculateAttributes();
+            }
         }
 
         UpdateInventoryDTO inv = sheetDTO.inventory();
