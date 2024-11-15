@@ -25,7 +25,7 @@ public record CharacterSheetDTO(
                 sheet.getProfession(),
                 sheet.getRace(),
                 sheet.getWeapon(),
-                AttrSet.sum(sheet.getProfession(), sheet.getRace(), sheet.getWeapon()),
+                sheet.getAttributeSet(),
                 new InventoryDTO(sheet.getInventory()),
                 convertIfPresent(sheet.getRing(), GameElementDTO::new),
                 convertIfPresent(sheet.getBracelet(), GameElementDTO::new),

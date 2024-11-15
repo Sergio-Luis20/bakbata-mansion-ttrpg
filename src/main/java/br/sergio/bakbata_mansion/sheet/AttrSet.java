@@ -1,5 +1,6 @@
 package br.sergio.bakbata_mansion.sheet;
 
+import br.sergio.bakbata_mansion.exception.NegativeIntegerException;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Embeddable;
 
@@ -26,7 +27,7 @@ public record AttrSet(
     public AttrSet {
         if (healthPoints < 0 || manaPoints < 0 || attack < 0 || defense < 0 || speed < 0 || aim < 0
                 || dexterity < 0 || intelligence < 0 || strength < 0 || spirit < 0 || precision < 0) {
-            throw new IllegalArgumentException("All args must be non-negative");
+            throw new NegativeIntegerException("All args must be non-negative");
         }
     }
 
