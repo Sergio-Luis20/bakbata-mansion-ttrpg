@@ -1,26 +1,40 @@
 package br.sergio.bakbata_mansion.service;
 
 import br.sergio.bakbata_mansion.exception.*;
+import br.sergio.bakbata_mansion.repository.AbilityRepository;
 import br.sergio.bakbata_mansion.repository.CharacterSheetRepository;
 import br.sergio.bakbata_mansion.sheet.*;
+import jakarta.annotation.PostConstruct;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
 public class CharacterSheetService {
 
+    @PersistenceContext
+    private EntityManager entityManager;
     private CharacterSheetRepository repository;
     private ItemService itemService;
+    private AbilityRepository abilityRepository;
+
+    @PostConstruct
+    public void setup() {
+        List<Ability> abilities = Arrays.stream(Race.values())
+                .flatMap(race -> Stream.of(race.getFirstAbility(), race.getSecondAbility(), race.getThirdAbility()))
+                .toList();
+        abilityRepository.saveAll(abilities);
+    }
 
     public Optional<CharacterSheet> getSheet(UUID id) {
         return repository.findById(id);
@@ -111,6 +125,7 @@ public class CharacterSheetService {
             }
         }
 
+        entityManager.detach(sheet);
         return repository.save(sheet);
     }
 

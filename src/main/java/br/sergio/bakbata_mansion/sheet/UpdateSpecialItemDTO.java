@@ -1,13 +1,16 @@
 package br.sergio.bakbata_mansion.sheet;
 
-import java.util.Objects;
+import br.sergio.bakbata_mansion.exception.NegativeIntegerException;
+import br.sergio.bakbata_mansion.exception.NullJsonPropertyException;
 
 public record UpdateSpecialItemDTO(Long id) {
 
     public UpdateSpecialItemDTO {
-        Objects.requireNonNull(id, "id");
+        if (id == null) {
+            throw new NullJsonPropertyException("id cannot be null");
+        }
         if (id <= 0) {
-            throw new IllegalArgumentException("id must be positive");
+            throw new NegativeIntegerException("id must be positive");
         }
     }
 

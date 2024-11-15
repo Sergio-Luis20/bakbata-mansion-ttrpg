@@ -22,20 +22,19 @@ public enum Race implements AttributeContributor {
 
     private final AttrSet attributeSet;
 
-    private final Ability firstAbility;
-    private final Ability secondAbility;
-    private final Ability thirdAbility;
+    private Ability firstAbility;
+    private Ability secondAbility;
+    private Ability thirdAbility;
+
+    private String description;
 
     Race(int healthPoints, int manaPoints) {
         attributeSet = new AttrSet(healthPoints, manaPoints, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        setAbilities();
+    }
 
-        InputStream stream = getClass().getResourceAsStream("/abilities.csv");
-        if (stream == null) {
-            throw new RuntimeException("Missing file \"abilities.csv\" in classpath");
-        }
-
-        long index = 0;
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+    private void setAbilities() {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(getInputStream("/abilities.csv")))) {
             List<String> lines = reader.lines().toList();
             List<String> abilities = lines.stream().filter(line -> line.startsWith(name())).toList();
             if (abilities.size() != 3) {
@@ -49,6 +48,18 @@ public enum Race implements AttributeContributor {
         }
     }
 
+    private void setDescriptions() {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(getInputStream("/races.csv")))) {
+            description = reader.lines()
+                    .filter(line -> line.startsWith(name()))
+                    .findFirst()
+                    .get()
+                    .split("#")[1];
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
     private Ability parseAbility(String line, List<String> lines) {
         long index = lines.indexOf(line) + 1;
         String[] args = line.split("#");
@@ -56,6 +67,14 @@ public enum Race implements AttributeContributor {
             throw new RuntimeException("Ability args count different of 3");
         }
         return new Ability(index, args[1], args[2]);
+    }
+
+    private static InputStream getInputStream(String file) {
+        InputStream stream = Race.class.getResourceAsStream(file);
+        if (stream == null) {
+            throw new RuntimeException("Missing file \"" + file +"\" in classpath");
+        }
+        return stream;
     }
 
 }
