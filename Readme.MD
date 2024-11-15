@@ -542,3 +542,65 @@ Retorna o conjunto de habilidades da raça especificada.
   "message": "string"
 }
 ```
+
+### (RA) /story/race/{race}
+#### GET
+Obtém a descrição de uma raça específica.
+
+**Parâmetros da URL**:
+- **race**: A raça. Deve ser uma das retornadas por **GET /sheet/all-options/Race**.
+
+**Respostas**:
+
+**200 OK** Se a raça for encontrada.
+
+- **Headers**:
+Content-Type: text/plain
+- **Body**: A descrição da raça solicitada.
+
+**400 Bad Request**: Se a raça não for encontrada.
+
+- **Headers**:
+  Content-Type: application/json
+- **Body**:
+```json lines
+{
+  "statusCode": int,
+  "message": "string"
+}
+```
+
+### (RA) /story/all/{type}
+#### GET
+Obtém todas as descrições do tipo especificado.
+
+**Parâmetros da URL**:
+- **type**: O tipo, que pode ser Profession, Race ou Weapon.
+
+**Respostas**:
+
+**200 OK** Se as descrições forem encontradas.
+
+- **Headers**:
+  Content-Type: application/json
+- **Body**:
+Exemplo para *type = Race*:
+```json lines
+{
+  "HUMAN": "string",
+  "WITCH": "string",
+  ...
+}
+```
+
+**400 Bad Request**: Se o tipo não for encontrado.
+
+- **Headers**:
+  Content-Type: application/json
+- **Body**:
+```json lines
+{
+  "statusCode": int,
+  "message": "string"
+}
+```
