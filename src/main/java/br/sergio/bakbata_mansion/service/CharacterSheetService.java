@@ -42,7 +42,7 @@ public class CharacterSheetService {
 
     public CharacterSheet saveSheet(CharacterSheet sheet) {
         if (sheet.getUser() == null) {
-            throw new OrphanSheetException("Character sheet must have an associated user");
+            throw new OrphanSheetException("Character sheet must have an associated user.");
         }
         return repository.save(sheet);
     }
